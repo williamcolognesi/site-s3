@@ -24,4 +24,4 @@ jobs:
         run: aws s3 sync . s3://${{secrets.AWS_BUCKET_NAME}} --delete --exclude ".git/*" --exclude ".github/*"
 
       - name: Invalidate Cache CDN
-        run: aws cloudfront create-invalidation --distribuition-id ${{secrets.CDN_ID}} --paths "/*"
+        run: aws cloudfront create-invalidation --distribution-id ${{secrets.CDN_ID}} --paths "/*"
